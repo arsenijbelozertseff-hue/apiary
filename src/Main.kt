@@ -171,7 +171,7 @@ fun actionComplianceWithTheRules(player: Player,
     // 1. В counter есть хотя бы одна цифра, которая повторяется три раза подряд
     // 2. Энергия уменьшится до нуля
     if (localCounter.toSet().any { it.toString().repeat(3) in localCounter } ||
-        player.energy - energyChange < 1) {
+        player.energy + energyChange < 1) {
         println("═".repeat(75))
         println(
             """"!!! ВЫ ПОДТВЕРЖДАЕТЕ СВОЙ ВЫБОР? ПРИ ВЫПОЛНЕНИИ ЭТОГО ДЕЙСТВИЯ ИГРА ЗАКОНЧИТСЯ !!!
@@ -243,7 +243,7 @@ fun action(player: Player){
     println("2. 💊Заказать витаминно-экологические стимуляторы (-20 денег, +20 готовности)")
     println("3. 💤Отдохнуть (+7 энергии)")
     // Проверяем, что попытки для выбора действия "Испытать удачу" не исчерпаны
-    if (player.attempt == 1) println("4. ☘️Испытать удачу (+40 готовности / -30 готовности)")
+    if (player.attempt == 1) println("4. ☘️Испытать удачу (+30 готовности / -30 готовности)")
     println("═".repeat(75))
     // Сохраняем ответ в choice
     val choice: Int? = readlnOrNull()?.toIntOrNull()

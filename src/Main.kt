@@ -254,7 +254,7 @@ fun action(player: Player){
             actionComplianceWithTheRules(player,
                 "1",
                 0,
-                player.energyCost(),
+                -player.energyCost(),
                 20)
             // Выполняем, если всё ок
             if (flag) {
